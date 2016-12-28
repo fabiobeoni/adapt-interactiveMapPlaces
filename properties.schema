@@ -1,0 +1,110 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties":{
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "apiKey": {
+      "type": "string",
+      "required": true,
+      "title": "API Key",
+      "default": "XXXXXXXX",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Your Google Maps API Key, to get one go to https://developers.google.com/maps/documentation/javascript/get-api-key."
+    },
+    "language": {
+      "type": "string",
+      "required": true,
+      "title": "Language",
+      "default": "en",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Map language to display (default is 'en', others are 'es', 'fr', 'it', 'ar', etc.. For a full list of supported languages see this page https://developers.google.com/maps/faq#languagesupport)"
+    },
+    "uniqueName": {
+              "type": "string",
+              "required": true,
+              "title": "Unique name",
+              "default": "Map-1",
+              "inputType": "Text",
+              "validators": [],
+              "help": "A unique map name on the page. If you are using only one map on the page just leave the default name, if you have multiple maps instead, use a number or a name to identify each map (like 'Map1', 'Map2')."
+    },
+    "mapHeight": {
+              "type": "number",
+              "required": true,
+              "title": "Height (rem)",
+              "default": 30,
+              "inputType": "Number",
+              "validators": [],
+              "help": "The size of the map, you can define the height while the width full-fills the parent space."
+    },
+    "enableCompletionOnClick": {
+              "type": "boolean",
+              "title": "Enable completion on click",
+              "default": true,
+              "inputType": {"type": "Boolean", "options": [true, false]},
+              "validators": [],
+              "help": "Select 'true' if you want that learners must click on each place to display the place content and to complete the component."
+        },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Places",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "address": {
+            "type": "string",
+            "required": true,
+            "inputType": "Text",
+            "title": "Address/Name",
+            "default": "",
+            "validators": [],
+            "help": "The address or name of a place you want to display on map",
+            "translatable": false
+          },
+          "title": {
+            "type": "string",
+            "required": true,
+            "inputType": "Text",
+            "title": "Title",
+            "default": "",
+            "validators": [],
+            "help": "This title to be displayed to the learner on map",
+            "translatable": false
+          },
+          "content": {
+            "type": "string",
+            "required": false,
+            "inputType": "TextArea",
+            "title": "Content",
+            "default": "",
+            "validators": [],
+            "help": "The content to be displayed when the learner clicks on the place marker icon",
+            "translatable": true
+          }
+        }
+      }
+    }
+  }
+}

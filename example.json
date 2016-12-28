@@ -1,0 +1,30 @@
+[
+	{
+		"_id": "c-01",
+		"_parentId": "b-01",
+		"_type": "component",
+		"_component": "interactiveMapPlaces",
+		"_classes": "",
+		"_layout": "full",
+		"title": "Interactive Map Places",
+		"displayTitle": "Interactive Map Places",
+		"body": "",
+		"apiKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+		"language":"en",
+		"mapHeight":30,
+		"uniqueName":"MyMap",
+		"enableCompletionOnMarkersClick":true,
+		"_items": [
+			{
+				"address": "Great Ocean Road, Victoria, Australia",
+				"title": "Great Ocean Road (Australia)",
+				"content": "Some content..."
+			},
+			{
+				"address": "Lombard Street, San Francisco, USA",
+				"title": "Lombard Street (USA)",
+				"content": "Some content..."
+			}
+		]
+	}
+]
