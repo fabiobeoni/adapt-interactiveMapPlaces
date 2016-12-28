@@ -13,7 +13,7 @@
 		"language":"en",
 		"mapHeight":30,
 		"uniqueName":"MyMap",
-		"enableCompletionOnMarkersClick":true,
+		"enableCompletionOnClick":true,
 		"_items": [
 			{
 				"address": "Great Ocean Road, Victoria, Australia",

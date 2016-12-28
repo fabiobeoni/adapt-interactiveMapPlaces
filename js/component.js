@@ -5,7 +5,7 @@ define(function(require) {
     var ComponentView = require('coreViews/componentView');
     var Adapt = require('coreJS/adapt');
 
-    //the current component
+    //the current component, for return statement
     var component = {};
 
     //loads needed utilities and main
@@ -18,6 +18,9 @@ define(function(require) {
         var Utils = interactiveMapPlaces.Utils; //namespace declared in loaded libs
         var MapWrapper = interactiveMapPlaces.MapWrapper; //namespace declared in loaded libs
 
+        //local reference always available
+        var _component;
+
         //model fields and other constants
         var F = {
             MAP_TAG : 'interactiveMapPlaces-map-',
@@ -29,16 +32,12 @@ define(function(require) {
             API_KEY:'apiKey',
             ADDRESS:'address',
             LANGUAGE:'language',
-            ENABLE_COMPLETION_ON_CLICK:'enableCompletionOnMarkersClick'
+            ENABLE_COMPLETION_ON_CLICK:'enableCompletionOnClick'
         };
 
         //number of marker places that the learner has clicked
         //to display the marker content
         var clickedMarkers = [];
-
-        //callback function to invoke when all markers
-        // have been clicked
-        var completionCallBack = null;
 
         //model value defining if clicking on marker
         //the component status has to change
@@ -48,6 +47,11 @@ define(function(require) {
         component = ComponentView.extend({
 
             preRender: function () {
+
+                //references the current comp to local scope for later use
+                //where 'this' doesn't refer to the component it-self
+                _component = this;
+
                 //updates the model with a unique map ID needed to
                 //select it with-in the document if other instances
                 //of the component are there too
@@ -55,9 +59,6 @@ define(function(require) {
 
                 //fill the value from model for later use in different context
                 isCompletionOnClickEnabled = this.model.get(F.ENABLE_COMPLETION_ON_CLICK);
-
-                //fill the value from comp for later use in different context
-                completionCallBack = this.setCompletionStatus;
             },
 
             postRender: function () {
@@ -73,18 +74,17 @@ define(function(require) {
 
                 //Google Maps script is actually loaded once, multiple
                 //instances of the component get a cached reference to it
-                var _this = this;
                 MapWrapper.load(function (map) {
                     if(map)
-                        MapWrapper.addPlaces(_this.model.get(F.ITEMS));
+                        MapWrapper.addPlaces(_component.model.get(F.ITEMS),_component.trackMarkerClick);
 
                     //set the component completion status to true
                     //when the user is not requested to click on
                     //on each marker to complete the component
                     if(!isCompletionOnClickEnabled)
-                        _this.setCompletionStatus();
+                        _component.setCompletionStatus();
 
-                    _this.setReadyStatus();
+                    _component.setReadyStatus();
                 });
             },
 
@@ -106,10 +106,9 @@ define(function(require) {
                     //when all markers are clicked, fires the completion
                     if(clickedMarkers.length==foundPlaces){
                         try{
-                            completionCallBack();
+                            _component.setCompletionStatus();
                         }
                         catch (err){
-                            //TODO: verify why the completion gives error. May be depend by the completion not enabled on this testing course on dev env.
                             console.error(err);
                         }
                     }
