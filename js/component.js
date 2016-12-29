@@ -82,7 +82,7 @@ define(function(require) {
                     //when the user is not requested to click on
                     //on each marker to complete the component
                     if(!isCompletionOnClickEnabled)
-                        _component.setCompletionStatus();
+                        _component.completeComponent();
 
                     _component.setReadyStatus();
                 });
@@ -105,13 +105,16 @@ define(function(require) {
 
                     //when all markers are clicked, fires the completion
                     if(clickedMarkers.length==foundPlaces){
-                        try{
-                            _component.setCompletionStatus();
-                        }
-                        catch (err){
-                            console.error(err);
-                        }
+                        _component.completeComponent();
                     }
+                }
+            },
+            completeComponent:function () {
+                try{
+                    _component.setCompletionStatus();
+                }
+                catch (err){
+                    console.error(err);
                 }
             }
 
