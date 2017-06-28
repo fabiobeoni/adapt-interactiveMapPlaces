@@ -1,27 +1,27 @@
 {
-	"name": "adapt-interactiveMapPlaces",
-	"description": "Displays an interactive map (from Google Maps service) with clickable marker icons. Markers show contents that you define.",
-	"version": "1.0.0",
-	"framework": "^2.0.0",
-	"displayName": "Interactive Map - Places",
-	"component": "interactiveMapPlaces",
-	"main": "/js/component.js",
-	"homepage": "https://github.com/fabiobeoni/adapt-interactiveMapPlaces",
-	"repository": "git://github.com/fabiobeoni/adapt-interactiveMapPlaces.git",
-	"issues": "https://github.com/fabiobeoni/adapt-interactiveMapPlaces/issues",
-	"keywords": [
-		"adapt-plugin",
-		"adapt-component",
-		"interactive map",
-		"google maps",
-		"map",
-		"street",
-		"address",
-		"place",
-		"google places"
-	],
-	"license": "CC BY-ND 4.0",
-	"authors": [
-		"Fabio Beoni <reg@beoni.net>"
-	]
+    "name": "adaptInteractiveMapPlaces",
+    "repository": "git://github.com/fabiobeoni/adapt-interactiveMapPlaces.git",
+    "framework": "^2.0.0",
+    "description": "Displays an interactive map (from Google Maps service) with clickable marker icons. Markers show contents that you define.",
+    "version": "1.2.6",
+    "displayName": "Interactive Map - Places",
+    "component": "adaptInteractiveMapPlaces",
+    "main": "/js/component.js",
+    "homepage": "https://github.com/fabiobeoni/adapt-interactiveMapPlaces",
+    "issues": "https://github.com/fabiobeoni/adapt-interactiveMapPlaces/issues",
+    "keywords": [
+        "adapt-plugin",
+        "adapt-component",
+        "interactive map",
+        "google maps",
+        "map",
+        "street",
+        "address",
+        "place",
+        "google places"
+    ],
+    "license": "CC BY-ND 4.0",
+    "authors": [
+        "Fabio Beoni <reg@beoni.net>"
+    ]
 }

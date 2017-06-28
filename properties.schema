@@ -102,6 +102,24 @@
             "validators": [],
             "help": "The content to be displayed when the learner clicks on the place marker icon",
             "translatable": true
+          },
+          "picture": {
+              "type": "string",
+              "required": false,
+              "inputType": "Asset:image",
+              "title": "Picture",
+              "default": "",
+              "validators": [],
+              "help": "An image to be displayed when the learner clicks on the place marker icon"
+          },
+          "extreference": {
+                "type": "string",
+                "required": false,
+                "inputType": {"type": "Text", "dataType": "url"},
+                "title": "External Reference (URL)",
+                "default": "",
+                "validators": [],
+                "help": "An external reference URL (link) to be displayed when the learner clicks on the place marker icon"
           }
         }
       }
