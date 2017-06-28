@@ -14,12 +14,11 @@
 <a href="https://fabiobeoni.github.io/adapt/" target="_blank">See this interactive map on a sample course</a>.
 </p>
 
-----------------------------
 
 **How to install**
 
 <ol>
- <li><a herf="https://github.com/fabiobeoni/adapt-interactiveMapPlaces/archive/master.zip">download the Interactive Map - Places</a> plugin component</li>
+ <li><a href="https://github.com/fabiobeoni/adapt-interactiveMapPlaces/archive/master.zip">download the Interactive Map - Places</a> plugin component</li>
  <li>go to your AdaptLearning Authoring tool, in the main menu select "Plugins Management / Upload Plugin"</li>
  <li>select the downloaded zip file</li>
 </ol>
@@ -28,16 +27,14 @@
 
 <p>This component is free under the <a href="LICENSE">Creative Commons licence agreement "Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)"</a>.</p>
 
-----------------------------
 
 **Note about the map service**
 
 <p>Maps are based on Google Maps service. To create maps, you must request a <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">Google Map API KEY</a>, then copy/paste the key
 when creating the map with AdaptLearning Authoring tool.</p>
 <p>Google Maps service has a <a href="https://developers.google.com/maps/pricing-and-plans/" target="_blank">generous free plan</a>, under a certain volume of map drawings and for free courses. Please refer to Google Maps free plan to make sure that
-it fits your needs.</p>
-
-----------------------------
+ fits your needs.</p>
+ 
 
 **Support the development**
 <p>
