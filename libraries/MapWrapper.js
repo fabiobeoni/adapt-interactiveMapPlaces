@@ -1,9 +1,10 @@
 /**
- * TODO: Error handling
+ * Google Maps wrapper class to expose only context related features.
  *
  * @author Fabio Beoni: https://github.com/fabiobeoni | https://it.linkedin.com/in/fabio-beoni-6a7848101
  */
 define(function () {
+
     var MapWrapper = function () {
 
             /**
@@ -90,7 +91,7 @@ define(function () {
                 this.messageListElemID = opts.messageListElemID;
 
                 //for China, changes the api url domain
-                if(this.language=='zh-CN')
+                if(this.language==='zh-CN')
                     this.googleDomain = this.googleDomains['zh-CN'];
                 else
                     this.googleDomain = this.googleDomains.general;
@@ -236,7 +237,7 @@ define(function () {
                         _this.displayMarkersOnCompleted();
 
                         //displays the alert box when some places couldn't be found
-                        _this.Ui.$listBox.css({display:((_this.foundPlaces!=_this.requestedPlaces) ? "block" : "none")});
+                        _this.Ui.$listBox.css({display:((_this.foundPlaces!==_this.requestedPlaces) ? "block" : "none")});
                     });
                 });
             };
@@ -293,10 +294,9 @@ define(function () {
 
             /**
              * Fit the map zoom to display all markers
-             * @param total {number}: total amount of places fou
              */
             this.displayMarkersOnCompleted=function () {
-                if(this.markers.length==this.foundPlaces){
+                if(this.markers.length===this.foundPlaces){
                     var bounds = new google.maps.LatLngBounds();
                     for (var m in this.markers)
                         bounds.extend(this.markers[m].getPosition());
@@ -306,7 +306,7 @@ define(function () {
                     this.map.fitBounds(bounds);
 
                     //sets teh best zoom possible to display all markers
-                    if(this.markers.length==1)
+                    if(this.markers.length===1)
                         this.map.setZoom(this.map.getZoom()-5);
                     else
                     //remove one zoom level to ensure no marker is on the edge.
@@ -318,17 +318,28 @@ define(function () {
             }
         };
 
+    /**
+     * List of observers to be notified when
+     * when the Google Maps API is ready to use.
+     * @type {Array}: mapWrapperInstance {MapWrapper}, callback {function}
+     */
+    MapWrapper.prototype.mapReadyObservers = [];
+
+    /**
+     * Invoked when the Google Maps script is included
+     * and fully loaded.
+     * @param mapWrapper {MapWrapper}: instance of MapWrapper
+     */
     MapWrapper.prototype.onMapAPILoaded = function(mapWrapper){
         for(var i in mapWrapper.mapReadyObservers){
             var obs = mapWrapper.mapReadyObservers[i];
             //creates the google maps instance with-in the
             //the ui map box when script is ready
             obs.mapWrapperInstance.createMap(obs.mapWrapperInstance.Ui.$mapBox.attr('id'));
+            //invokes the callbacks on each map api ready listener
             obs.callback(obs.mapWrapperInstance.map);
         }
     };
-
-    MapWrapper.prototype.mapReadyObservers = [];
 
     return MapWrapper;
 });
