@@ -12,7 +12,12 @@
 
 <p>
 <a href="https://fabiobeoni.github.io/adapt/" target="_blank">See this interactive map on a sample course</a>.
+
+[See this interactive map on a sample course](https://fabiobeoni.github.io/adapt/){:target="_blank"}
+
 </p>
+
+
 
 
 **How to install**
