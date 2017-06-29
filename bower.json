@@ -1,5 +1,5 @@
 {
-    "name": "adaptInteractiveMapPlaces",
+    "name": "adapt-interactiveMapPlaces",
     "repository": "git://github.com/fabiobeoni/adapt-interactiveMapPlaces.git",
     "framework": "^2.0.0",
     "description": "Displays an interactive map (from Google Maps service) with clickable marker icons. Markers show contents that you define.",
