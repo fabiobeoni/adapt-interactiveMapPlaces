@@ -6,8 +6,7 @@
  <p>The component adds a list of places on the map, each place is clickable and displays a custom content.</p>
 
 <p>
-    <img src="http://fabiobeoni.github.io/adapt/docs/map-places.png" alt="Course with interactive map based on Google Maps, with clickable markers" />
-    <img src="http://fabiobeoni.github.io/adapt/docs/map-place-visible.png" alt="Course with interactive map showing a place with additional information" />
+    <img src="docs/maps-screeshot.jpg" alt="Course with interactive map based on Google Maps, with clickable markers" />
 </p>
 
 <p>
