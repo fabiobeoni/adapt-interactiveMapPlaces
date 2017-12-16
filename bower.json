@@ -1,9 +1,9 @@
 {
     "name": "adapt-interactiveMapPlaces",
     "repository": "git://github.com/fabiobeoni/adapt-interactiveMapPlaces.git",
-    "framework": "^2.0.0",
+    "framework": "^3.0.0",
     "description": "Displays an interactive map (from Google Maps service) with clickable marker icons. Markers show contents that you define.",
-    "version": "1.2.6",
+    "version": "1.3.0",
     "displayName": "Interactive Map - Places",
     "component": "adaptInteractiveMapPlaces",
     "main": "/js/component.js",
