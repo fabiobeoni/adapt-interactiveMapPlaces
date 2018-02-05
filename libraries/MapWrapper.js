@@ -296,7 +296,7 @@ define(function () {
              * Fit the map zoom to display all markers
              */
             this.displayMarkersOnCompleted=function () {
-                if(this.markers.length===this.foundPlaces){
+                if(this.markers.length>=this.foundPlaces){
                     var bounds = new google.maps.LatLngBounds();
                     for (var m in this.markers)
                         bounds.extend(this.markers[m].getPosition());
